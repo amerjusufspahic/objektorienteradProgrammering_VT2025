@@ -22,7 +22,10 @@ public class UserData {
     }
 
     public void processUserFile() {
-        try (Scanner scanner = new Scanner(new File(USER_INPUT_FILE))) {
+        Scanner scanner = null;
+
+        try {
+            scanner = new Scanner(new File(USER_INPUT_FILE));
             while (scanner.hasNextLine()) {
                 String line = scanner.nextLine().trim();
                 String[] parts = line.split(",");
@@ -44,12 +47,10 @@ public class UserData {
                 balances.put(username, Integer.parseInt(balanceStr));
             }
 
-            // Save users.ser
             try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(USERS_FILE))) {
                 oos.writeObject(users);
             }
 
-            // Save balances.txt
             try (BufferedWriter bw = new BufferedWriter(new FileWriter(BALANCES_FILE))) {
                 for (var entry : balances.entrySet()) {
                     bw.write(entry.getKey() + "," + entry.getValue());
@@ -57,13 +58,27 @@ public class UserData {
                 }
             }
 
-            // Delete users.txt
-            new File(USER_INPUT_FILE).delete();
-
         } catch (IOException e) {
             e.printStackTrace();
+        } finally {
+            // Släpp scanner-resursen (om inte redan stängd)
+            if (scanner != null) {
+                scanner.close();
+            }
+
+            // Försök ta bort users.txt säkert
+            try {
+                Thread.sleep(100); // säkerställ att scanner har släppt filen
+                File file = new File(USER_INPUT_FILE);
+                boolean deleted = file.delete();
+                System.out.println("users.txt deleted? " + deleted);
+            } catch (InterruptedException e) {
+                System.err.println("Tråden avbröts vid väntan på filradering.");
+                e.printStackTrace();
+            }
         }
     }
+
 
     private boolean validate(String username, String password, String firstName, String lastName,
                              String address, String phone, String balance) {

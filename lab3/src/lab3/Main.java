@@ -34,14 +34,14 @@ public class Main {
 					System.out.print("Enter amount to withdraw");
 					String amountInputWith = sc.nextLine().trim();
 					int amountWith = Integer.parseInt(amountInputWith);
-					account.deposit(amountWith);
+					account.withdraw(amountWith);
 					break;
 
 				case "transfer":
 					System.out.print("Enter amount to transfer");
 					String amountInputTra = sc.nextLine().trim();
 					int amountTra = Integer.parseInt(amountInputTra);
-					account.deposit(amountTra);
+					account.transfer(amountTra);
 					break;
 
 				case "balance" :

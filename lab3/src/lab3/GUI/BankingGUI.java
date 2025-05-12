@@ -21,14 +21,17 @@ public class BankingGUI extends JFrame{
 	private final JButton transferButton;
 	private final JRadioButton showHistoryButton;
 	private final JRadioButton hideHistoryButton;
-	private final BankFunctions manager; 
-	private final UserData db = new UserData();
+	private BankFunctions manager; 
+	private UserData db = new UserData();
 	private String loggedInUsername; 
 
-	public BankingGUI() {
+	public BankingGUI(String username) {
+		
 		super("Simple Banking System");
-		manager = new BankFunctions();
-		manager.setBalance(db.getBalance(loggedInUsername));
+		 this.loggedInUsername = username;
+		    this.manager = new BankFunctions();
+		    this.db = new UserData();
+		    manager.setBalance(db.getBalance(username));
 		setSize(400, 300);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setLayout(new BorderLayout());
@@ -43,6 +46,8 @@ public class BankingGUI extends JFrame{
 		outputArea = new JTextArea("Current Balance: " + manager.getBalance() + "\n"); 
 		outputArea.setEditable(false);
 		JScrollPane scrollPanel = new JScrollPane(outputArea);
+		outputArea.setText("Current Balance: " + manager.getBalance() + "\n");
+
 		topPanel.add(scrollPanel, BorderLayout.CENTER);
 
 
@@ -85,7 +90,6 @@ public class BankingGUI extends JFrame{
 
 	private class ButtonHandler implements ActionListener{
 		public void actionPerformed(ActionEvent a) {
-			int newBalance = manager.getBalance(); // hämta nytt saldo från BankFunctions
 			
 			
 			String transactionType = "";
@@ -108,6 +112,8 @@ public class BankingGUI extends JFrame{
 			try {
 				int amount = Integer.parseInt(input.trim());
 				manager.processTransaction(transactionType, amount);
+				int newBalance = manager.getBalance(); // hämta nytt saldo från BankFunctions
+
 				db.updateBalance(loggedInUsername, newBalance);
 				db.logTransaction(loggedInUsername, transactionType, amount);
 
@@ -156,8 +162,8 @@ public class BankingGUI extends JFrame{
 	            String pass = new String(passwordField.getPassword());
 
 	            if (db.authenticate(user, pass)) {
-	                BankingGUI gui = new BankingGUI();
-	                gui.loggedInUsername = user;
+	                BankingGUI gui = new BankingGUI(user);
+	                gui.setVisible(true);
 	                return;
 	            } else {
 	                JOptionPane.showMessageDialog(
