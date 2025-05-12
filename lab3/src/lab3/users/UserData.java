@@ -61,21 +61,21 @@ public class UserData {
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
-            // Släpp scanner-resursen (om inte redan stängd)
+            
             if (scanner != null) {
                 scanner.close();
             }
 
-            // Försök ta bort users.txt säkert
             try {
-                Thread.sleep(100); // säkerställ att scanner har släppt filen
+                Thread.sleep(100); 
                 File file = new File(USER_INPUT_FILE);
                 boolean deleted = file.delete();
                 System.out.println("users.txt deleted? " + deleted);
-            } catch (InterruptedException e) {
-                System.err.println("Tråden avbröts vid väntan på filradering.");
-                e.printStackTrace();
             }
+            catch (InterruptedException ign) {
+            	
+            }
+            
         }
     }
 

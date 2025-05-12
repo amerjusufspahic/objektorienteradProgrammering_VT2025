@@ -24,10 +24,21 @@ public class User implements Serializable {
     this.phoneNumber = phoneNumber;
 }
     
-    public String getUsername() { return username; }
-    public String getHashedPassword() { return hashedPassword; }
-    public String getFirstName() { return firstName; }
-    public String getLastName() { return lastName; }
-    public String getAddress() { return address; }
-    public String getPhoneNumber() { return phoneNumber; }
+    public String getUsername() { 
+    	return username; }
+    
+    public String getHashedPassword() { 
+    	return hashedPassword; }
+    
+    public String getFirstName() { 
+    	return firstName; }
+    
+    public String getLastName() { 
+    	return lastName; }
+    
+    public String getAddress() { 
+    	return address; }
+    
+    public String getPhoneNumber() { 
+    	return phoneNumber; }
 }
