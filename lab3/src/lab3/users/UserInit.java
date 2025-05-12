@@ -12,7 +12,8 @@ public class UserInit {
 
         // Steg 2: läs users.ser och skriv ut användarnamn
         try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("users.ser"))) {
-            Map<String, User> users = (Map<String, User>) ois.readObject();
+            @SuppressWarnings("unchecked")
+			Map<String, User> users = (Map<String, User>) ois.readObject();
 
             System.out.println("Registrerade användare:");
             for (String username : users.keySet()) {

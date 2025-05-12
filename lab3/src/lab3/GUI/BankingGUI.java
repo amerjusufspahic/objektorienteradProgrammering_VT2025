@@ -11,6 +11,10 @@ import java.awt.event.*;
 
 public class BankingGUI extends JFrame{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private final JTextArea outputArea;
 	private final JButton depositButton;
 	private final JButton withdrawButton;
