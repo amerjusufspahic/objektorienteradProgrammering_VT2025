@@ -1,0 +1,12 @@
+package lab3.exceptions;
+
+public class InvalidException extends Exception {
+    public InvalidException(String message) {
+        super(message); 
+        
+        
+
+    }
+    
+    
+}
