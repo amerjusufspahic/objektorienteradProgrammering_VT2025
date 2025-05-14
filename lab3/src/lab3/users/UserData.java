@@ -160,7 +160,7 @@ public class UserData {
 		return user.getHashedPassword().equals(hashPassword(password));
 	}
 
-	public int getBalance(String username) 
+	public int getBalance(String username) {
 	//returnerar saldo för anv, annars 0
 	return balances.getOrDefault(username, 0);
 }
