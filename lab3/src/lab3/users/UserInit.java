@@ -6,11 +6,14 @@ import java.util.Map;
 
 public class UserInit {
     public static void main(String[] args) {
+    	
+    	//skapar UserData objekt som hanterar anv filer och konto info
         UserData db = new UserData();
-        db.processUserFile(); // Steg 1: bearbeta users.txt och skapa users.ser + balances.txt
+        //Läser in users.txt, validerar och sparar anv till users.ser och balances.txt
+        db.processUserFile();
         System.out.println("Users processed and serialized.");
 
-        // Steg 2: läs users.ser och skriv ut användarnamn
+        // öppnar users-ser för att läsa in aööa sparade anv
         try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("users.ser"))) {
             @SuppressWarnings("unchecked")
 			Map<String, User> users = (Map<String, User>) ois.readObject();
