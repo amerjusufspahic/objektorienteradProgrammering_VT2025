@@ -6,7 +6,9 @@ public class User implements Serializable {
 	/**
 	 * 
 	 */
+	
 	private static final long serialVersionUID = 1L;
+	//strängar för användare
 	private String username;
     private String hashedPassword;
     private String firstName;
@@ -14,6 +16,7 @@ public class User implements Serializable {
     private String address;
     private String phoneNumber;
     
+    //konstruktor för User objekt
     public User(String username, String hashedPassword, String firstName,
             String lastName, String address, String phoneNumber) {
     this.username = username;
@@ -23,7 +26,7 @@ public class User implements Serializable {
     this.address = address;
     this.phoneNumber = phoneNumber;
 }
-    
+    //getters för att hämta värden
     public String getUsername() { 
     	return username; }
     

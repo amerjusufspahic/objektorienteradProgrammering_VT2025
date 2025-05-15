@@ -15,14 +15,18 @@ public class UserInit {
 
         // öppnar users-ser för att läsa in aööa sparade anv
         try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("users.ser"))) {
-            @SuppressWarnings("unchecked")
+            //läser in och ändrar till Map<String, User
+        	@SuppressWarnings("unchecked")
 			Map<String, User> users = (Map<String, User>) ois.readObject();
 
+        	//skriver ut alla anv namn
             System.out.println("Registrerade användare:");
             for (String username : users.keySet()) {
                 System.out.println("- " + username);
             }
-        } catch (Exception e) {
+        } 
+        //fångar och skriver ut fel
+        catch (Exception e) {
             e.printStackTrace();
         }
     }

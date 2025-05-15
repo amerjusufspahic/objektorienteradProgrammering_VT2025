@@ -183,15 +183,15 @@ public void updateBalance(String username, int newBalance) {
 	}
 }
 
-public void logTransaction(String username, String type, int amount) {
-	try (	//skapar fil med med namn och lägger till längst ner
-			Formatter formatter = new Formatter(new FileWriter("history_" + username + ".log", true))) {
-		//loggar datum, vad den gör och belopp
-		formatter.format("[%s] %s %d%n", new Date(), type.toUpperCase(), amount);
+	public void logTransaction(String username, String type, int amount) {
+		try (	//skapar fil med med namn och lägger till längst ner
+				Formatter formatter = new Formatter(new FileWriter("history_" + username + ".log", true))) {
+			//loggar datum, vad den gör och belopp
+			formatter.format("[%s] %s %d%n", new Date(), type.toUpperCase(), amount);
+		}
+		//fångar fel
+		catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
-	//fångar fel
-	catch (IOException e) {
-		e.printStackTrace();
-	}
-}
 }

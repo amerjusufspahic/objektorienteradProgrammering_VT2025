@@ -1,2 +1,2 @@
-johnDoe,1000
-alice99,101500
+johnDoe,1200
+alice99,1500
