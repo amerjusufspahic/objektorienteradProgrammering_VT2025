@@ -1,0 +1,4 @@
+Weapon;Short Sword;5
+Armor;Leather Armor;2
+Weapon;Ice Blade;6
+Armor;Magic Cloak;3
