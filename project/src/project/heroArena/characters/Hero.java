@@ -1,5 +1,7 @@
 package project.heroArena.characters;
 
+import project.heroArena.data.GameLogger;
+
 public class Hero extends Character{
 	public Hero(String name) {
 		super(name, 30);
@@ -12,7 +14,7 @@ public class Hero extends Character{
 
 	    int damage = Math.max(0, weaponDamage - targetArmor);
 
-	    System.out.println(getName() + " attacks " + target.getName() + " for " + damage + " damage.");
+	    GameLogger.logCombat(getName(), target.getName(), damage);
 	    target.receiveDamage(damage);
 	}
 }

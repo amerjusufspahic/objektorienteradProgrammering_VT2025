@@ -1,0 +1,85 @@
+[2025-05-22T19:59:31.695972400] Battle begins between Vin and Goblin
+[2025-05-22T20:02:48.280099100] Battle begins between Vin and Goblin
+[2025-05-22T20:03:59.509522100] Battle begins between Vin and Goblin
+[2025-05-22T20:04:43.882257300] Battle begins between Vin and Goblin
+[2025-05-22T20:05:38.259295400] Battle begins between Vin and Goblin
+[2025-05-22T20:07:01.561779500] Battle begins between Vin and Goblin
+[2025-05-22T20:07:30.144557700] Battle begins between Vin and Goblin
+[2025-05-23T08:28:49.005366200] Battle begins between Vin and Goblin
+[2025-05-23T08:29:00.620175400] Goblin attacks Vin for 1 damage.
+[2025-05-23T08:30:47.725588100] Battle begins between v and Goblin
+[2025-05-23T08:32:48.055855400] Battle begins between v and Goblin
+[2025-05-23T08:35:02.515715400] Battle begins between v and Goblin
+[2025-05-23T08:35:19.397226300] v attacks Goblin for 6 damage.
+[2025-05-23T08:35:19.401137300] Goblin attacks v for 1 damage.
+[2025-05-23T08:35:28.333296] v attacks Goblin for 6 damage.
+[2025-05-23T08:35:28.334284800] Goblin equipped Leather Armor
+[2025-05-23T08:35:28.335358] Goblin attacks v for 1 damage.
+[2025-05-23T08:35:34.561537500] v equipped Ice Blade
+[2025-05-23T08:35:34.563539800] Goblin equipped Magic Cloak
+[2025-05-23T08:35:34.564538800] Goblin attacks v for 1 damage.
+[2025-05-23T08:35:37.939468900] v attacks Goblin for 6 damage.
+[2025-05-23T08:35:37.940470400] Goblin attacks v for 1 damage.
+[2025-05-23T08:35:40.420376700] v attacks Goblin for 6 damage.
+[2025-05-23T08:35:40.422380600] Goblin equipped Magic Cloak
+[2025-05-23T08:35:40.423379300] Goblin attacks v for 1 damage.
+[2025-05-23T08:35:42.382591900] v attacks Goblin for 6 damage.
+[2025-05-23T08:35:42.384591] v has won the battle!
+[2025-05-23T08:40:46.585880700] Battle begins between Vin and Goblin
+[2025-05-23T08:40:51.247850800] Vin attacks Goblin for 6 damage.
+[2025-05-23T08:40:51.252851700] Goblin attacks Vin for 1 damage.
+Battle begins between Vin and Goblin
+Vin attacks Goblin for 6 damage.
+Goblin attacks Vin for 1 damage.
+Battle begins between Vin and Goblin
+Goblin attacks Vin for 1 damage.
+Battle begins between Vin and Goblin
+Vin attacks Goblin for 6 damage.
+Goblin attacks Vin for 1 damage.
+Goblin attacks Vin for 1 damage.
+Vin equipped Ice Blade
+Goblin attacks Vin for 1 damage.
+Battle begins between Vin and Goblin
+Vin equipped Ice Blade
+Goblin attacks Vin for 1 damage.
+A wild Goblin appears! The battle begins 
+A wild Goblin appears! The battle begins 
+Vin attacks Goblin for 6 damage.
+Goblin attacks Vin for 1 damage.
+Vin attacks Goblin for 6 damage.
+Goblin attacks Vin for 1 damage.
+A wild Goblin appears! The battle begins 
+A wild Goblin appears! The battle begins 
+A wild Goblin appears! The battle begins 
+A wild Goblin appears! The battle begins 
+A wild Goblin appears! The battle begins 
+A wild Goblin appears! The battle begins 
+A wild Goblin appears! The battle begins 
+A wild Goblin appears! The battle begins 
+A wild Goblin appears! The battle begins 
+A wild Goblin appears! The battle begins 
+A wild Goblin appears! The battle begins 
+A wild Goblin appears! The battle begins 
+A wild Goblin appears! The battle begins 
+A wild Goblin appears! The battle begins 
+A wild Goblin appears! The battle begins 
+Vin attacks Goblin for 2 damage.
+Goblin equipped Ice Blade
+Goblin equipped Magic Cloak
+Goblin attacks Vin for 4 damage.
+A wild Goblin appears! The battle begins 
+Goblin equipped Ice Blade
+Goblin attacks Vin for 4 damage.
+Goblin attacks Vin for 4 damage.
+Vin equipped Leather Armor
+Goblin attacks Vin for 4 damage.
+Vin attacks Goblin for 2 damage.
+Goblin equipped Magic Cloak
+Goblin attacks Vin for 4 damage.
+A wild Goblin appears! The battle begins 
+Vin equipped Leather Armor
+Vin attacks Goblin for 2 damage.
+Goblin attacks Vin for 4 damage.
+Vin equipped Short Sword
+Vin attacks Goblin for 2 damage.
+Goblin attacks Vin for 4 damage.

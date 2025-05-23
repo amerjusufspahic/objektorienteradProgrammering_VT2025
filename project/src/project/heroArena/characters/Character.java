@@ -13,11 +13,10 @@ public abstract class Character {
 	private Weapon equippedWeapon;
 	private Armor equippedArmor;
 	
-	private ArrayList<Item> inventory = new ArrayList<>();
+	protected ArrayList<Item> inventory = new ArrayList<>();
 	
 	public void addItem(Item item) {
 		inventory.add(item);
-		System.out.println(name + " picked upp: " + item.getName());
 	}
 	
 	public ArrayList<Item> getInventory(){
@@ -25,21 +24,21 @@ public abstract class Character {
 	}
 	
 	public void equipItem(int index) {
-		if (index < 0 || index >= inventory.size()) {
-			System.out.println("Invalid item number.");
-			return;
+		 if (index < 0 || index >= inventory.size()) {
+		        System.out.println("Invalid item number.");
+		        return;
+		    }
+
+		    Item item = inventory.get(index);
+
+		    if (item instanceof Weapon) {
+		        equippedWeapon = (Weapon) item;
+		        System.out.println(getName() + " equips weapon: " + item.getName() + " " + ((Weapon) item).getDamage());
+		    } else if (item instanceof Armor) {
+		        equippedArmor = (Armor) item;
+		        System.out.println(getName() + " equips armor: " + item.getName() + " " + ((Armor) item).getDefense());
+		    }
 		}
-		
-		Item item = inventory.get(index) ;
-		if(item instanceof Weapon) {
-			equippedWeapon = (Weapon) item;
-			System.out.println(name + " equipped weapon: " + item.getName());
-			
-		}else if (item instanceof Armor) {
-			equippedArmor = (Armor) item;
-			System.out.println(name + " equipped armor: " + item.getName());
-		}
-	}
 	
 	public Weapon getEquippedWeapon() {
 		return equippedWeapon;
@@ -73,21 +72,6 @@ public abstract class Character {
 		return health > 0;
 	}
 	
-	public void setName() {
-		this.name = name;
-		
-	}
-	public void setHealth() {
-		this.health = health;
-	}
-	
-	public void setArmor() {
-		this.armor = armor;
-	}
-	
-	public void setWeapon() {
-		this.weapon = weapon;
-	}
 	
 	public String getName() {
 		return name;

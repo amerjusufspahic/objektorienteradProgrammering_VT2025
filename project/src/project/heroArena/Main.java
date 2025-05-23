@@ -14,34 +14,56 @@ public class Main {
         Hero hero = new Hero(heroName);
         Monster monster = new Monster("Goblin");
 
-        // Ladda in items från fil
+        
         List<Item> items = FileManager.loadItems("items.txt");
 
-        // Ge hjälten några föremål
-        for (int i = 0; i < Math.min(4, items.size()); i++) {
-            hero.addItem(items.get(i));
+        List<Weapon> weapons = new ArrayList<>();
+        List<Armor> armors = new ArrayList<>();
+
+        for (Item item : items) {
+            if (item instanceof Weapon) {
+                weapons.add((Weapon) item);
+            } else if (item instanceof Armor) {
+                armors.add((Armor) item);
+            }
         }
+        
+        if (weapons.size() >= 2 && armors.size() >= 2) {
+        	hero.addItem(weapons.get(0));
+            hero.equipItem(hero.getInventory().size() - 1);
+            hero.addItem(armors.get(0));
+            hero.equipItem(hero.getInventory().size() - 1);
 
-        // Startutrustning
-        hero.equipItem(0);
-        hero.equipItem(1);
+            monster.addItem(weapons.get(1));
+            monster.addItem(armors.get(1));
+            monster.equipItem(0);
+            monster.equipItem(1);
+            
+        } 
+         System.out.println("");
+        GameLogger.log("A wild " + monster.getName() + " appears! The battle begins ");
 
-        monster.equipWeapon("Ice Blade");
-        monster.equipArmor("Magic Cloak");
-
-        // Spelloop
         while (hero.isAlive() && monster.isAlive()) {
             System.out.println("\n=== " + hero.getName() + "'s turn ===");
+            System.out.println("HP: " + hero.getHealth());
             System.out.println("1. Attack");
             System.out.println("2. View Inventory");
             System.out.println("3. Equip Item");
 
             int choice = InputHelper.readInt("Choose action: ", 1, 3);
+            System.out.println("");
 
             switch (choice) {
-                case 1 -> hero.takeTurn(monster);
+                case 1 -> {hero.takeTurn(monster);
+                System.out.println(monster.getName() + " HP: " + monster.getHealth());
+                System.out.println("\n=== " + monster.getName() + "'s Turn ===");
+                monster.takeTurn(hero);
+                
+                
+                }
                 case 2 -> {
                     List<Item> inv = hero.getInventory();
+                    System.out.println("Inventory:");
                     for (int i = 0; i < inv.size(); i++) {
                         System.out.println(i + ": " + inv.get(i).getType() + " - " + inv.get(i).getName());
                     }
@@ -53,16 +75,16 @@ public class Main {
                     }
                     int itemIndex = InputHelper.readInt("Item number to equip: ", 0, inv.size() - 1);
                     hero.equipItem(itemIndex);
+                    GameLogger.logEquip(hero.getName(), inv.get(itemIndex).getName());
+                    System.out.println("");
                 }
             }
 
             if (!monster.isAlive()) break;
 
-            System.out.println("\n=== " + monster.getName() + "'s Turn ===");
-            monster.takeTurn(hero);
+           
         }
 
-        // Spel slut
         if (hero.isAlive()) {
             GameLogger.logVictory(hero.getName());
         } else {
